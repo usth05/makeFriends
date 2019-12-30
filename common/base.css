@@ -1,0 +1,29 @@
+/* 内外边距 */
+.p-2 {
+	padding: 20rpx;
+}
+
+/* flex布局 */
+.flex {
+	display: flex;
+}
+
+.flex-1 {
+	flex: 1;
+}
+
+.align-center {
+	align-items: center;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.rounded-circle {
+	border-radius: 100%
+}
