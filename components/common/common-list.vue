@@ -33,25 +33,29 @@
 		</view>
 		<!-- 图标按钮 -->
 		<view class="flex align-center">
+			<!-- 顶 -->
 			<view class="flex flex-1 align-center justify-center animated faster" 
-			hover-class="jello text-main" @click="doSupport('support')">
+			hover-class="jello text-main" @click="doSupport('support')" :class="item.support.type == 'support'?'support-active':''">
 				<text class="iconfont icon-dianzan2 mr-2"></text>
-				<text>{{item.support.support_count}}</text>
+				<text>{{item.support.support_count ? item.support.support_count : "支持"}}</text>
 			</view>
+			<!-- 踩 -->
 			<view class="flex flex-1 align-center justify-center animated faster" 
-			hover-class="jello text-main" @click="doSupport('unsupport')">
+			hover-class="jello text-main" @click="doSupport('unsupport')" :class="item.support.type == 'unsupport'?'support-active':''">
 				<text class="iconfont icon-cai mr-2"></text>
-				<text>{{item.support.unsupport_count}}</text>
+				<text>{{item.support.unsupport_count ? item.support.unsupport_count : "反对"}}</text>
 			</view>
+			<!-- 评论 -->
 			<view class="flex flex-1 align-center justify-center animated faster" 
 			hover-class="jello text-main" @click="openDetail()">
 				<text class="iconfont icon-pinglun2 mr-2"></text>
-				<text>{{item.comment_count}}</text>
+				<text>{{item.comment_count ? item.comment_count : "评论"}}</text>
 			</view>
+			<!-- 分享 -->
 			<view class="flex flex-1 align-center justify-center animated faster" 
 			hover-class="jello text-main" @click="openDetail()">
 				<text class="iconfont icon-fenxiang mr-2"></text>
-				<text>{{item.share_count}}</text>
+				<text>{{item.share_count ? item.share_count : "分享"}}</text>
 			</view> 
 		</view>
 	</view>
@@ -76,11 +80,10 @@
 				console.log("进入详情");
 			},
 			doSupport(type){
-				if(type == 'support'){
-					console.log("顶")
-				}else{
-					console.log("踩")
-				}
+				this.$emit("doSupport",{
+					type:type,
+					index:this.index,
+				})
 				
 			}
 		}
@@ -88,4 +91,7 @@
 </script>
 
 <style>
+	.support-active{
+		color: #FF4A6A;
+	}
 </style>

@@ -33,9 +33,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(f
 
 /***/ }),
 /* 4 */
-/*!*****************************************************!*\
-  !*** C:/Users/ixuelei/Desktop/项目/【社区交友】/pages.json ***!
-  \*****************************************************/
+/*!**************************!*\
+  !*** G:/社区交友/pages.json ***!
+  \**************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -65,9 +65,9 @@ eval("module.exports = {\"_from\":\"@dcloudio/uni-stat@^2.0.0-alpha-244201911280
 
 /***/ }),
 /* 7 */
-/*!**********************************************************************!*\
-  !*** C:/Users/ixuelei/Desktop/项目/【社区交友】/pages.json?{"type":"style"} ***!
-  \**********************************************************************/
+/*!*******************************************!*\
+  !*** G:/社区交友/pages.json?{"type":"style"} ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -76,9 +76,9 @@ eval("Object.defineProperty(exports, \"__esModule\", { value: true });exports.de
 
 /***/ }),
 /* 8 */
-/*!*********************************************************************!*\
-  !*** C:/Users/ixuelei/Desktop/项目/【社区交友】/pages.json?{"type":"stat"} ***!
-  \*********************************************************************/
+/*!******************************************!*\
+  !*** G:/社区交友/pages.json?{"type":"stat"} ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
