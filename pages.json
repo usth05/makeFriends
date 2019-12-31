@@ -26,7 +26,11 @@
 			}
 		}, {
 			"path": "pages/news/news",
-			"style": {}
+			"style": {
+				"app-plus":{
+					"titleNView":false
+				}
+			}
 		}, {
 			"path": "pages/msg/msg",
 			"style": {}
@@ -34,7 +38,38 @@
 			"path": "pages/my/my",
 			"style": {}
 		}
-	],
+	    ,{
+            "path" : "pages/search/search",
+            "style" : {
+				"app-plus": {
+					"titleNView": {
+						"searchInput": {
+							"align": "center",
+							"backgroundColor": "#f5f4f2",
+							"borderRadius": "4px",
+							"placeholder": "搜索帖子",
+							"placeholderColor": "#6d6c67"
+						},
+						"buttons": [{
+							"color": "#333333",
+							"colorPressed": "#FD597C",
+							"float": "right",
+							"fontSize": "14px",
+							"text": "搜索"
+						}]
+					}
+				}
+			}
+        }
+        ,{
+            "path" : "pages/add-input/add-input",
+            "style" : {
+				"app-plus":{
+					"titleNView":false
+				}
+			}
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "社区交友",

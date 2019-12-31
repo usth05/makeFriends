@@ -21,6 +21,8 @@
   },
   "usingComponents": {
     "divider": "/components/common/divider",
-    "common-list": "/components/common/common-list"
+    "no-thing": "/components/common/no-thing",
+    "common-list": "/components/common/common-list",
+    "load-more": "/components/common/load-more"
   }
 }
