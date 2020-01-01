@@ -24,7 +24,9 @@
 		},
 		methods:{
 			openMore(){
-				console.log("打开更多")
+				uni.navigateTo({
+					url: '../../pages/topic-nav/topic-nav'
+				});
 			},
 			openDetail(){
 				console.log("打开话题分类页")

@@ -1,0 +1,27 @@
+{
+  "titleNView": {
+    "autoBackButton": false,
+    "searchInput": {
+      "align": "center",
+      "backgroundColor": "#f5f4f2",
+      "borderRadius": "4px",
+      "disabled": true,
+      "placeholder": "搜索用户",
+      "placeholderColor": "#6d6c67"
+    },
+    "buttons": [
+      {
+        "color": "#333333",
+        "colorPressed": "#FD597C",
+        "float": "right",
+        "fontSize": "15px",
+        "text": "取消"
+      }
+    ]
+  },
+  "usingComponents": {
+    "no-thing": "/components/common/no-thing",
+    "load-more": "/components/common/load-more",
+    "user-list": "/components/user-list/user-list"
+  }
+}

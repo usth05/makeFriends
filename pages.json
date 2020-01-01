@@ -33,7 +33,29 @@
 			}
 		}, {
 			"path": "pages/msg/msg",
-			"style": {}
+			"style": {
+				"navigationBarTitleText":"消息列表",
+				"enablePullDownRefresh":true,
+				"app-plus":{
+					"titleNView":{
+						"buttons":[{
+							"color": "#333333",
+							"colorPressed": "#FD597C",
+							"float": "left",
+							"fontSize": "20px",
+							"fontSrc": "/static/iconfont.ttf",
+							"text": "\ue611"
+						},{
+							"color": "#333333",
+							"colorPressed": "#FD597C",
+							"float": "right",
+							"fontSize": "20px",
+							"fontSrc": "/static/iconfont.ttf",
+							"text": "\ue649"
+						}]
+					}
+				}
+			}
 		}, {
 			"path": "pages/my/my",
 			"style": {}
@@ -66,6 +88,68 @@
             "style" : {
 				"app-plus":{
 					"titleNView":false
+				}
+			}
+        }
+        ,{
+            "path" : "pages/topic-nav/topic-nav",
+            "style" : {
+				"navigationBarTitleText":"话题分类"
+			}
+        }
+        ,{
+            "path" : "pages/topic-detail/topic-detail",
+            "style" : {
+				"app-plus":{
+					"titleNView":{
+						"type":"transparent",
+						"buttons":[{
+							"type":"menu"
+						}]
+					}
+				}
+			}
+        }
+        ,{
+            "path" : "pages/user-list/user-list",
+            "style" : {
+				"app-plus": {
+					"titleNView": {
+						"autoBackButton":false,//隐藏返回按钮
+						"searchInput": {
+							"align": "center",
+							"backgroundColor": "#f5f4f2",
+							"borderRadius": "4px",
+							"disabled": true,
+							"placeholder": "搜索用户",
+							"placeholderColor": "#6d6c67"
+						},
+						"buttons": [{
+							"color": "#333333",
+							"colorPressed": "#FD597C",
+							"float": "right",
+							"fontSize": "15px",
+							"text": "取消"
+						}]
+					}
+				}
+			}
+        }
+        ,{
+            "path" : "pages/user-chat/user-chat",
+            "style" : {
+				"app-plus":{
+					"bounce":"none",
+					"titleNView":{
+						"buttons":[{
+							"color": "#333333",
+							"colorPressed": "#FD597C",
+							"float": "right",
+							"fontSize": "20px",
+							"fontSrc": "/static/iconfont.ttf",
+							"text": "\ue628"
+						}]
+					}
 				}
 			}
         }
