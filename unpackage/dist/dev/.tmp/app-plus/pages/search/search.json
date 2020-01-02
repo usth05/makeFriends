@@ -18,6 +18,8 @@
     ]
   },
   "usingComponents": {
-    "common-list": "/components/common/common-list"
+    "common-list": "/components/common/common-list",
+    "topic-list": "/components/news/topic-list",
+    "user-list": "/components/user-list/user-list"
   }
 }

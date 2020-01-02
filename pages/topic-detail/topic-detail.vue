@@ -120,7 +120,6 @@
 			// tab切换
 			changeTab(index){
 				this.tabIndex = index;
-				console.log()
 			},
 			//上拉加载事件
 			loadmore(){

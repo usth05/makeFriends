@@ -1,0 +1,1 @@
+<view><view class="iconfont icon-guanbi flex align-center justify-center font-lg position-fixed" style="{{'width:100rpx;height:100rpx;left:0;'+('top:'+statusBarHeight+'px')}}" hover-class="bg-light" data-event-opts="{{[['tap',[['back']]]]}}" bindtap="__e"></view></view>

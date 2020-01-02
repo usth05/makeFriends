@@ -29,7 +29,7 @@
 					<hot-cate :hotCate="hotCate"></hot-cate>
 					<!-- 搜索框 -->
 					<view class="p-2">
-						<view class="bg-light flex rounded align-center justify-center py-2 text-secondary">
+						<view @click="openSearch()" class="bg-light flex rounded align-center justify-center py-2 text-secondary">
 							<text class="iconfont icon-sousuo mr-2"></text>
 							搜索话题
 						</view>
@@ -227,6 +227,12 @@
 					this.loadMore = "上拉加载更多";
 				}, 2000)
 			},
+			// 打开搜索页
+			openSearch(){
+				uni.navigateTo({
+					url: '../search/search?type=topic',
+				});
+			}
 		}
 	}
 </script>

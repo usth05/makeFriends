@@ -43,7 +43,15 @@
 			unsupport_count: 2
 		},
 		comment_count: 2,
-		share_count: 2
+		share_count: 2,
+		content: "今日上午，台军一架载13人黑鹰直升机因不明原因迫降上去，'参谋总长'沈一鸣已获救",
+		images: [{
+			url: "/static/demo/datapic/1.jpg",
+		}, {
+			url: "/static/demo/datapic/3.jpg",
+		}, {
+			url: "/static/demo/datapic/2.jpg",
+		}]
 	},{
 		userName: "昵称",
 		userPic: "/static/demo/userpic/1.jpg",
@@ -57,7 +65,15 @@
 			unsupport_count: 2
 		},
 		comment_count: 2,
-		share_count: 2
+		share_count: 2,
+		content: "今日上午，台军一架载13人黑鹰直升机因不明原因迫降上去，'参谋总长'沈一鸣已获救",
+		images: [{
+			url: "/static/demo/datapic/1.jpg",
+		}, {
+			url: "/static/demo/datapic/3.jpg",
+		}, {
+			url: "/static/demo/datapic/2.jpg",
+		}]
 	}];
 	const demo1 = [{
 		userName: "昵称",
@@ -134,7 +150,7 @@
 		// 监听点击原生标题栏搜索事件
 		onNavigationBarSearchInputClicked() {
 			uni.navigateTo({
-				url: '../search/search',
+				url: '../search/search?type=post',
 			});
 		},
 		// 监听导航按钮事件
@@ -154,7 +170,7 @@
 						list: []
 					}
 					if (i < 2) {
-						if(i == 1){
+						if(i == 0){
 							obj.list = demo;
 						}else{
 							obj.list = demo1;

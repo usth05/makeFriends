@@ -117,7 +117,7 @@
 		// 监听点击原生标题栏搜索事件
 		onNavigationBarSearchInputClicked() {
 			uni.navigateTo({
-				url: '../search/search',
+				url: '../search/search?type=',
 			});
 		},
 		// 监听导航按钮事件

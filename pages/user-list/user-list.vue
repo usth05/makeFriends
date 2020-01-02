@@ -87,7 +87,7 @@
 		// 点击导航栏搜索框
 		onNavigationBarSearchInputClicked() {
 			uni.navigateTo({
-				url: '../search/search',
+				url: '../search/search?type=user',
 			});
 		},
 		// 点击导航栏按钮
@@ -116,7 +116,6 @@
 			// tab切换
 			changeTab(index) {
 				this.tabIndex = index;
-				console.log()
 			},
 			// 监听滑动
 			onChangeTab(e) {
