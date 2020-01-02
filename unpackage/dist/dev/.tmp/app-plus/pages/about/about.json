@@ -1,6 +1,4 @@
 {
   "navigationBarTitleText": "关于社区",
-  "usingComponents": {
-    "uni-list-item": "/components/uni-ui/uni-list-item/uni-list-item"
-  }
+  "usingComponents": {}
 }
