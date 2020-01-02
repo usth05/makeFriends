@@ -52,7 +52,7 @@
 		}, {
 			url: "/static/demo/datapic/2.jpg",
 		}]
-	},{
+	}, {
 		userName: "昵称",
 		userPic: "/static/demo/userpic/1.jpg",
 		newsTime: "2019-12-30 下午4点30",
@@ -89,7 +89,7 @@
 		},
 		comment_count: 2,
 		share_count: 2
-	},{
+	}, {
 		userName: "昵称",
 		userPic: "/static/demo/userpic/5.jpg",
 		newsTime: "2019-12-30 下午4点30",
@@ -170,9 +170,9 @@
 						list: []
 					}
 					if (i < 2) {
-						if(i == 0){
+						if (i == 0) {
 							obj.list = demo;
-						}else{
+						} else {
 							obj.list = demo1;
 						}
 					}

@@ -17,7 +17,8 @@
     "pages/user-userinfo/user-userinfo",
     "pages/user-feedback/user-feedback",
     "pages/about/about",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/user-space/user-space"
   ],
   "window": {
     "navigationBarTextStyle": "black",

@@ -25,7 +25,6 @@
 			disable(){
 				return this.oldPassword === '' || this.newPassword === '' || this.renewPassword === '';
 			},
-			
 		},
 		methods: {
 			// 验证

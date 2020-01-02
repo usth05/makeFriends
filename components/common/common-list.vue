@@ -5,8 +5,7 @@
 		<view class="flex align-center" style="justify-content: space-between;">
 			<view class="flex align-center">
 				<!-- 头像 -->
-				<image class="rounded-circle mr-2" :src="item.userPic" @click.stop="openSpace()" style="width: 65rpx;height: 65rpx;"
-				 lazy-load></image>
+				<image class="rounded-circle mr-2" :src="item.userPic" @click.stop="openSpace()" style="width: 65rpx;height: 65rpx;" lazy-load></image>
 				<!-- 昵称发布时间 -->
 				<view>
 					<view class="font" style="line-height: 1.5;">{{item.userName}}</view>
@@ -71,7 +70,12 @@
 		methods: {
 			// 打开个人空间
 			openSpace() {
-				console.log("打开个人空间");
+				uni.navigateTo({
+					url: '/pages/user-space/user-space',
+					success: res => {},
+					fail: () => {},
+					complete: () => {}
+				});
 			},
 			// 关注功能
 			follow() {
