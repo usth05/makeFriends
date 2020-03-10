@@ -1,1 +1,153 @@
-"use weex:vue";var __wxConfig = {"debug":false,"appname":"【社区交友】","entryPagePath":"pages/index/index.html","page":{"pages/index/index.html":{"window":{"titleNView":{"searchInput":{"align":"center","backgroundColor":"#f5f4f2","borderRadius":"4px","disabled":true,"placeholder":"搜索帖子","placeholderColor":"#6d6c67"},"buttons":[{"color":"#333333","colorPressed":"#FD597C","float":"right","fontSize":"20px","fontSrc":"/static/iconfont.ttf","text":""}]},"usingComponents":{"divider":"/components/common/divider","no-thing":"/components/common/no-thing","common-list":"/components/common/common-list","load-more":"/components/common/load-more"}}},"pages/news/news.html":{"window":{"titleNView":false,"usingComponents":{"divider":"/components/common/divider","uni-nav-bar":"/components/uni-ui/uni-nav-bar/uni-nav-bar","common-list":"/components/common/common-list","load-more":"/components/common/load-more","hot-cate":"/components/news/hot-cate","topic-list":"/components/news/topic-list"}}},"pages/msg/msg.html":{"window":{"navigationBarTitleText":"消息列表","enablePullDownRefresh":true,"titleNView":{"buttons":[{"color":"#333333","colorPressed":"#FD597C","float":"left","fontSize":"20px","fontSrc":"/static/iconfont.ttf","text":""},{"color":"#333333","colorPressed":"#FD597C","float":"right","fontSize":"20px","fontSrc":"/static/iconfont.ttf","text":""}]},"usingComponents":{"no-thing":"/components/common/no-thing","msg-list":"/components/msg/msg-list","uni-popup":"/components/uni-ui/uni-popup/uni-popup","uni-section":"/components/uni-ui/uni-section/uni-section"}}},"pages/my/my.html":{"window":{"navigationBarTitleText":"我的","titleNView":{"buttons":[{"type":"menu"}]},"usingComponents":{"uni-list-item":"/components/uni-ui/uni-list-item/uni-list-item"}}},"pages/search/search.html":{"window":{"titleNView":{"searchInput":{"align":"center","backgroundColor":"#f5f4f2","borderRadius":"4px","placeholder":"搜索帖子","placeholderColor":"#6d6c67"},"buttons":[{"color":"#333333","colorPressed":"#FD597C","float":"right","fontSize":"14px","text":"搜索"}]},"usingComponents":{"common-list":"/components/common/common-list","topic-list":"/components/news/topic-list","user-list":"/components/user-list/user-list"}}},"pages/add-input/add-input.html":{"window":{"titleNView":false,"usingComponents":{"uni-nav-bar":"/components/uni-ui/uni-nav-bar/uni-nav-bar","upload-image":"/components/common/upload-image"}}},"pages/topic-nav/topic-nav.html":{"window":{"navigationBarTitleText":"话题分类","usingComponents":{"no-thing":"/components/common/no-thing","topic-list":"/components/news/topic-list","load-more":"/components/common/load-more"}}},"pages/topic-detail/topic-detail.html":{"window":{"titleNView":{"type":"transparent","buttons":[{"type":"menu"}]},"usingComponents":{"divider":"/components/common/divider","no-thing":"/components/common/no-thing","topic-info":"/components/topic-detail/topic-info","common-list":"/components/common/common-list","load-more":"/components/common/load-more"}}},"pages/user-list/user-list.html":{"window":{"titleNView":{"autoBackButton":false,"searchInput":{"align":"center","backgroundColor":"#f5f4f2","borderRadius":"4px","disabled":true,"placeholder":"搜索用户","placeholderColor":"#6d6c67"},"buttons":[{"color":"#333333","colorPressed":"#FD597C","float":"right","fontSize":"15px","text":"取消"}]},"usingComponents":{"no-thing":"/components/common/no-thing","load-more":"/components/common/load-more","user-list":"/components/user-list/user-list"}}},"pages/user-chat/user-chat.html":{"window":{"bounce":"none","titleNView":{"buttons":[{"color":"#333333","colorPressed":"#FD597C","float":"right","fontSize":"20px","fontSrc":"/static/iconfont.ttf","text":""}]},"usingComponents":{"user-chat-list":"/components/user-chat/user-chat-list","bottom-input":"/components/common/bottom-input"}}},"pages/detail/detail.html":{"window":{"titleNView":{"buttons":[{"type":"menu","float":"right"}]},"usingComponents":{"divider":"/components/common/divider","common-list":"/components/common/common-list","bottom-input":"/components/common/bottom-input","more-share":"/components/common/more-share"}}},"pages/user-set/user-set.html":{"window":{"navigationBarTitleText":"设置","usingComponents":{"uni-list-item":"/components/uni-ui/uni-list-item/uni-list-item"}}},"pages/user-password/user-password.html":{"window":{"navigationBarTitleText":"修改密码","usingComponents":{}}},"pages/user-email/user-email.html":{"window":{"navigationBarTitleText":"绑定邮箱","usingComponents":{}}},"pages/user-userinfo/user-userinfo.html":{"window":{"navigationBarTitleText":"修改资料","usingComponents":{"uni-list-item":"/components/uni-ui/uni-list-item/uni-list-item","mpvue-city-picker":"/components/uni-ui/mpvue-citypicker/mpvueCityPicker"}}},"pages/user-feedback/user-feedback.html":{"window":{"navigationBarTitleText":"意见反馈","usingComponents":{"uni-section":"/components/uni-ui/uni-section/uni-section","uni-collapse":"/components/uni-ui/uni-collapse/uni-collapse","uni-collapse-item":"/components/uni-ui/uni-collapse-item/uni-collapse-item"}}},"pages/about/about.html":{"window":{"navigationBarTitleText":"关于社区","usingComponents":{"uni-list-item":"/components/uni-ui/uni-list-item/uni-list-item"}}},"pages/login/login.html":{"window":{"titleNView":false,"usingComponents":{"uni-nav-bar":"/components/uni-ui/uni-nav-bar/uni-nav-bar","other-login":"/components/common/other-login"}}},"pages/user-space/user-space.html":{"window":{"navigationBarTitleText":"个人空间","titleNView":{"buttons":[{"type":"menu"}]},"usingComponents":{"divider":"/components/common/divider","common-list":"/components/common/common-list","load-more":"/components/common/load-more"}}}},"global":{"window":{"navigationBarTextStyle":"black","navigationBarTitleText":"社区交友","navigationBarBackgroundColor":"#FFFFFF","backgroundColor":"#FF3333"}},"tabBar":{"color":"#333333","selectedColor":"#FD597C","backgroundColor":"#FFFFFF","borderStyle":"block","list":[{"pagePath":"pages/index/index.html","text":"首页","iconPath":"static/tabbar/index.png","selectedIconPath":"static/tabbar/indexed.png"},{"pagePath":"pages/news/news.html","text":"动态","iconPath":"static/tabbar/news.png","selectedIconPath":"static/tabbar/newsed.png"},{"pagePath":"pages/msg/msg.html","text":"信息","iconPath":"static/tabbar/paper.png","selectedIconPath":"static/tabbar/papered.png"},{"pagePath":"pages/my/my.html","text":"我的","iconPath":"static/tabbar/home.png","selectedIconPath":"static/tabbar/homeed.png"}],"position":"bottom"},"networkTimeout":{"request":60000,"connectSocket":60000,"uploadFile":60000,"downloadFile":60000},"platform":"devtools","pages":["pages/index/index","pages/news/news","pages/msg/msg","pages/my/my","pages/search/search","pages/add-input/add-input","pages/topic-nav/topic-nav","pages/topic-detail/topic-detail","pages/user-list/user-list","pages/user-chat/user-chat","pages/detail/detail","pages/user-set/user-set","pages/user-password/user-password","pages/user-email/user-email","pages/user-userinfo/user-userinfo","pages/user-feedback/user-feedback","pages/about/about","pages/login/login","pages/user-space/user-space"],"nvueCompiler":"uni-app","renderer":"auto","splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false},"compilerVersion":"2.4.6","usingComponents":{"divider":"/components/common/divider","no-thing":"/components/common/no-thing"}};
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	function webpackJsonpCallback(data) {
+/******/ 		var chunkIds = data[0];
+/******/ 		var moreModules = data[1];
+/******/ 		var executeModules = data[2];
+/******/
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0, resolves = [];
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(installedChunks[chunkId]) {
+/******/ 				resolves.push(installedChunks[chunkId][0]);
+/******/ 			}
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 		for(moduleId in moreModules) {
+/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
+/******/ 				modules[moduleId] = moreModules[moduleId];
+/******/ 			}
+/******/ 		}
+/******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
+/******/
+/******/ 		while(resolves.length) {
+/******/ 			resolves.shift()();
+/******/ 		}
+/******/
+/******/ 		// add entry modules from loaded chunk to deferred list
+/******/ 		deferredModules.push.apply(deferredModules, executeModules || []);
+/******/
+/******/ 		// run deferred modules when all chunks ready
+/******/ 		return checkDeferredModules();
+/******/ 	};
+/******/ 	function checkDeferredModules() {
+/******/ 		var result;
+/******/ 		for(var i = 0; i < deferredModules.length; i++) {
+/******/ 			var deferredModule = deferredModules[i];
+/******/ 			var fulfilled = true;
+/******/ 			for(var j = 1; j < deferredModule.length; j++) {
+/******/ 				var depId = deferredModule[j];
+/******/ 				if(installedChunks[depId] !== 0) fulfilled = false;
+/******/ 			}
+/******/ 			if(fulfilled) {
+/******/ 				deferredModules.splice(i--, 1);
+/******/ 				result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
+/******/ 			}
+/******/ 		}
+/******/ 		return result;
+/******/ 	}
+/******/
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// object to store loaded and loading chunks
+/******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 	// Promise = chunk loading, 0 = chunk loaded
+/******/ 	var installedChunks = {
+/******/ 		"app-config": 0
+/******/ 	};
+/******/
+/******/ 	var deferredModules = [];
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/";
+/******/
+/******/ 	var jsonpArray = this["webpackJsonp"] = this["webpackJsonp"] || [];
+/******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
+/******/ 	jsonpArray.push = webpackJsonpCallback;
+/******/ 	jsonpArray = jsonpArray.slice();
+/******/ 	for(var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
+/******/ 	var parentJsonpFunction = oldJsonpFunction;
+/******/
+/******/
+/******/ 	// run deferred modules from other chunks
+/******/ 	checkDeferredModules();
+/******/ })
+/************************************************************************/
+/******/ ([]);

@@ -3,7 +3,7 @@
 		<!-- 顶部选项卡 -->
 		<scroll-view scroll-x :scroll-into-view="scrollInto" :scroll-with-animation="true" class="scroll-row" style="height: 100rpx;">
 			<view v-for="(item,index) in tabBars" :key="index" class="scroll-row-item px-3 py-2 font-md" :id="'tab' + index"
-			 :class="tabIndex == index ? 'text-main font-lg font-weight-bold' : ''" @click="changeTab(index)">{{item.name}}</view>
+			 :class="tabIndex == index ? 'text-main font-lg font-weight-bold' : ''" @click="changeTab(index)">{{item.classname}}</view>
 		</scroll-view>
 
 		<swiper :duration="150" :current="tabIndex" @change="onChangeTab" :style="'height:' + scrollH + 'px'">
@@ -20,6 +20,13 @@
 						<!-- 上拉加载 -->
 						<loadMore :loadMore="item.loadmore"></loadMore>
 					</template>
+					<!-- 加载中 -->
+					<template v-else-if="!item.firstLoad">
+						<view class="text-light-muted flex align-center justify-center font-md" style="height: 200rpx;">
+							加载中
+						</view>
+					</template>
+					<!-- 没有更多数据 -->
 					<template v-else>
 						<no-thing></no-thing>
 					</template>
@@ -30,80 +37,6 @@
 </template>
 
 <script>
-	const demo = [{
-		userName: "昵称",
-		userPic: "/static/demo/userpic/5.jpg",
-		newsTime: "2019-12-30 下午4点30",
-		isFollow: false,
-		title: "我是标题",
-		titlePic: "/static/demo/datapic/3.jpg",
-		support: {
-			type: "",
-			support_count: 1,
-			unsupport_count: 2
-		},
-		comment_count: 2,
-		share_count: 2,
-		content: "今日上午，台军一架载13人黑鹰直升机因不明原因迫降上去，'参谋总长'沈一鸣已获救",
-		images: [{
-			url: "/static/demo/datapic/1.jpg",
-		}, {
-			url: "/static/demo/datapic/3.jpg",
-		}, {
-			url: "/static/demo/datapic/2.jpg",
-		}]
-	}, {
-		userName: "昵称",
-		userPic: "/static/demo/userpic/1.jpg",
-		newsTime: "2019-12-30 下午4点30",
-		isFollow: false,
-		title: "我是标题",
-		titlePic: "/static/demo/datapic/1.jpg",
-		support: {
-			type: "",
-			support_count: 1,
-			unsupport_count: 2
-		},
-		comment_count: 2,
-		share_count: 2,
-		content: "今日上午，台军一架载13人黑鹰直升机因不明原因迫降上去，'参谋总长'沈一鸣已获救",
-		images: [{
-			url: "/static/demo/datapic/1.jpg",
-		}, {
-			url: "/static/demo/datapic/3.jpg",
-		}, {
-			url: "/static/demo/datapic/2.jpg",
-		}]
-	}];
-	const demo1 = [{
-		userName: "昵称",
-		userPic: "/static/demo/userpic/1.jpg",
-		newsTime: "2019-12-30 下午4点30",
-		isFollow: false,
-		title: "我是标题",
-		titlePic: "/static/demo/datapic/2.jpg",
-		support: {
-			type: "",
-			support_count: 1,
-			unsupport_count: 2
-		},
-		comment_count: 2,
-		share_count: 2
-	}, {
-		userName: "昵称",
-		userPic: "/static/demo/userpic/5.jpg",
-		newsTime: "2019-12-30 下午4点30",
-		isFollow: false,
-		title: "我是标题",
-		titlePic: "/static/demo/datapic/3.jpg",
-		support: {
-			type: "",
-			support_count: 1,
-			unsupport_count: 2
-		},
-		comment_count: 2,
-		share_count: 2
-	}];
 	import commonList from '@/components/common/common-list.vue'
 	import loadMore from '@/components/common/load-more';
 	export default {
@@ -114,25 +47,7 @@
 		data() {
 			return {
 				scrollH: 600,
-				tabBars: [{
-					name: '关注'
-				}, {
-					name: '推荐'
-				}, {
-					name: '体育'
-				}, {
-					name: '热点'
-				}, {
-					name: '财经'
-				}, {
-					name: '娱乐'
-				}, {
-					name: '军事'
-				}, {
-					name: '历史'
-				}, {
-					name: '本地'
-				}],
+				tabBars: [],
 				tabIndex: 0,
 				scrollInto: "",
 				newsList: [],
@@ -155,30 +70,51 @@
 		},
 		// 监听导航按钮事件
 		onNavigationBarButtonTap(e) {
-			uni.navigateTo({
+			this.navigateTo({
 				url: '../add-input/add-input',
 			});
 		},
 		methods: {
 			// 获取数据
 			getData() {
-				var arr = [];
-				for (let i = 0; i < this.tabBars.length; i++) {
-					// 生产列表模板
-					let obj = {
-						loadmore: "上拉加载更多", //1.上拉加载更多 2.加载中... 3.没有更多了
-						list: []
+				// 获取分类
+				this.$H.get('/postclass').then(res => {
+					let [err, result] = res;
+					this.tabBars = result.data.data.list;
+					let arr = [];
+					for (let i = 0; i < this.tabBars.length; i++) {
+						arr.push({
+							loadmore: "上拉加载更多",
+							list: [],
+							page: 1,
+							firstLoad: false,
+						});
 					}
-					if (i < 2) {
-						if (i == 0) {
-							obj.list = demo;
-						} else {
-							obj.list = demo1;
-						}
+					this.newsList = arr;
+					if (this.tabBars.length) {
+						// this.getList();
 					}
-					arr.push(obj);
-				}
-				this.newsList = arr;
+				})
+			},
+			getList() {
+				let index = this.tabIndex;
+				let id = this.tabBars[index].id;
+				let page = this.newsList[index].page;
+				let isrefresh = page === 1;
+				let url = 'postclass/' + id + '/post/' + page;
+				this.$H.get(url).then(res => {
+					let [err, result] = res;
+					console.log(result)
+					return;
+					let list = result2.data.data.list.map(v => {
+						return this.$U.formatCommonList(v)
+					});
+					this.newsList[index].list = isrefresh ? list : [...this.newsList[index].list, ...list];
+					this.newsList[index].loadmore = list.length < 10 ? '没有更多了' : '上拉加载更多';
+					if (isrefresh) {
+						this.newsList[index].firstLoad = true;
+					}
+				})
 			},
 			// 下拉加载更多
 			loadmore(index) {
@@ -188,11 +124,7 @@
 				// 修改当前列表加载状态
 				item.loadmore = "加载中...";
 				//模拟加载请求
-				setTimeout(() => {
-					// 加载数据
-					item.list = [...item.list, ...item.list]
-					this.newsList[index].loadmore = "上拉加载更多";
-				}, 2000)
+				this.getList();
 			},
 			// 切换选项
 			changeTab(index) {
@@ -201,7 +133,11 @@
 				}
 				this.tabIndex = index;
 				// 滚动到指定题目
-				this.scrollInto = "tab" + index
+				this.scrollInto = "tab" + index;
+				if (!this.newsList[index].firstLoad) {
+					this.getList();
+				}
+
 			},
 			// 监听滑动
 			onChangeTab(e) {
@@ -237,7 +173,7 @@
 					title: msg + "成功"
 				});
 			}
-		}
+		},
 	}
 </script>
 

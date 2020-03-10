@@ -29,6 +29,7 @@
 				{{item.name}}
 			</view>
 		</view>
+		
 		<template v-if="tabIndex === 0">
 			<view class="animated fadeIn fast">
 				<view class="p-3 border-bottom">
@@ -45,13 +46,31 @@
 				</view>
 			</view>
 		</template>
+		
 		<template v-else>
-			<view class="animated fadeIn fast">
-				<common-list v-for="(item,index) in list" :key="index" @follow="follow()" @doSupport="doSupport()" :item="item" :index="index"></common-list>
+			<view  class="animated fadeIn fast">
+				<common-list v-for="(item,index) in list" :key="index" 
+				@follow="follow()" @doSupport="doSupport()" :item="item"
+				:index="index" :isSpace="true"></common-list>
 				<divider></divider>
-				<load-more :loadMore="loadMore"></load-more>
+				<load-more :loadMore="loadmore"></load-more>
 			</view>
 		</template>
+		
+		<!-- 弹出层 -->
+		<uni-popup ref="popup" type="top">
+			<view class="w-100 bg-white">
+				<view class="flex align-center justify-center font-md border-bottom py-2"
+				hover-class="bg-light" @click="popupEvent('friend')">
+					<text class="iconfont icon-sousuo mr-2"></text>加入黑名单
+				</view>
+				<view class="flex align-center justify-center font-md py-2"
+				hover-class="bg-light" @click="popupEvent('clear')">
+					<text class="iconfont icon-weixin mr-2"></text>聊天
+				</view>
+			</view>
+		</uni-popup>
+		
 	</view>
 </template>
 
@@ -103,10 +122,14 @@
 	}];
 	import commonList from '@/components/common/common-list.vue';
 	import loadMore from '@/components/common/load-more.vue';
+	import uniPopup from '@/components/uni-ui/uni-popup/uni-popup.vue';
+	import uniSection from '@/components/uni-ui/uni-section/uni-section.vue';
 	export default {
 		components: {
 			commonList,
-			loadMore
+			loadMore,
+			uniPopup,
+			uniSection
 		},
 		data() {
 			return {
@@ -131,6 +154,9 @@
 			loadmore() {
 				return this.tabBars[this.tabIndex].loadmore
 			}
+		},
+		onNavigationBarButtonTap() {
+			this.$refs.popup.open();
 		},
 		methods: {
 			changeTab(index) {
@@ -165,6 +191,9 @@
 				uni.showToast({
 					title: msg + "成功"
 				});
+			},
+			popupEvent(e){
+				console.log(e);
 			}
 		}
 	}

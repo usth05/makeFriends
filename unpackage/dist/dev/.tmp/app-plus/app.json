@@ -65,7 +65,7 @@
     "autoclose": false
   },
   "appname": "【社区交友】",
-  "compilerVersion": "2.4.6",
+  "compilerVersion": "2.5.1",
   "usingComponents": {
     "divider": "/components/common/divider",
     "no-thing": "/components/common/no-thing"

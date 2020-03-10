@@ -1,11 +1,12 @@
 <template>
 
-	<view class="p-2">
+	<view class="p-2 animated fast fadeIn">
 		<!-- 头像昵称  | 关注按钮-->
 		<view class="flex align-center" style="justify-content: space-between;">
 			<view class="flex align-center">
 				<!-- 头像 -->
-				<image class="rounded-circle mr-2" :src="item.userPic" @click.stop="openSpace()" style="width: 65rpx;height: 65rpx;" lazy-load></image>
+				<image class="rounded-circle mr-2" :src="item.userPic" @click.stop="openSpace()" style="width: 65rpx;height: 65rpx;"
+				 lazy-load></image>
 				<!-- 昵称发布时间 -->
 				<view>
 					<view class="font" style="line-height: 1.5;">{{item.userName}}</view>
@@ -25,7 +26,7 @@
 			<!-- 图片 -->
 			<image class="rounded w-100" v-if="item.titlePic" :src="item.titlePic" @click="openDetail()" style="height: 350rpx;"></image>
 		</slot>
-		
+
 		<!-- 图标按钮 -->
 		<view class="flex align-center">
 			<!-- 顶 -->
@@ -59,17 +60,22 @@
 		props: {
 			item: Object,
 			index: {
-				type:Number,
-				default:-1
+				type: Number,
+				default: -1
 			},
-			isDetail:{
-				type:Boolean,
+			isDetail: {
+				type: Boolean,
+				default: false
+			},
+			isSpace: {
+				type: Boolean,
 				default: false
 			}
 		},
 		methods: {
 			// 打开个人空间
 			openSpace() {
+				if (this.isSpace) return
 				uni.navigateTo({
 					url: '/pages/user-space/user-space',
 					success: res => {},
@@ -79,12 +85,14 @@
 			},
 			// 关注功能
 			follow() {
-				// 通知父组件
-				this.$emit('follow', this.index)
+				this.checkAuth(() => {
+					// 通知父组件
+					this.$emit('follow', this.index)
+				})
 			},
 			// 打开详情页
 			openDetail() {
-				if(this.isDetail)return
+				if (this.isDetail) return
 				uni.navigateTo({
 					url: '../../pages/detail/detail?detail=' + JSON.stringify(this.item),
 					success: res => {},
@@ -94,21 +102,25 @@
 			},
 			// 顶踩
 			doSupport(type) {
-				this.$emit("doSupport", {
-					type: type,
-					index: this.index,
+				this.checkAuth(() => {
+					this.$emit("doSupport", {
+						type: type,
+						index: this.index,
+					})
 				})
 			},
 			// 点击评论
-			doComment(){
-				if(!this.isDetail){
-					return this.openDetail()
-				}
-				this.$emit('doComment')
+			doComment() {
+				this.checkAuth(() => {
+					if (!this.isDetail) {
+						return this.openDetail()
+					}
+					this.$emit('doComment')
+				})
 			},
 			// 分享
-			doShare(){
-				if(!this.isDetail){
+			doShare() {
+				if (!this.isDetail) {
 					return this.openDetail()
 				}
 				this.$emit('doShare')

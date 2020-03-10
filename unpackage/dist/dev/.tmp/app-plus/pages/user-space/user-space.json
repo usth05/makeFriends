@@ -10,6 +10,8 @@
   "usingComponents": {
     "divider": "/components/common/divider",
     "common-list": "/components/common/common-list",
-    "load-more": "/components/common/load-more"
+    "load-more": "/components/common/load-more",
+    "uni-popup": "/components/uni-ui/uni-popup/uni-popup",
+    "uni-section": "/components/uni-ui/uni-section/uni-section"
   }
 }

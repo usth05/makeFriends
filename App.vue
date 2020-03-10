@@ -1,7 +1,12 @@
 <script>
 	export default {
 		onLaunch: function() {
-			console.log('App Launch')
+			// 检测更新
+			// this.$U.upDate();
+			// 网络监听
+			this.$U.onNetWork(); 
+			// 数据初始化
+			
 		},
 		onShow: function() {
 			console.log('App Show')
