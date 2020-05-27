@@ -28,7 +28,8 @@
 			"path": "pages/news/news",
 			"style": {
 				"app-plus":{
-					"titleNView":false
+					"titleNView":false,
+					"scrollIndicator":"none"
 				}
 			}
 		}, {
@@ -243,7 +244,6 @@
 		"color": "#333333",
 		"selectedColor": "#FD597C",
 		"backgroundColor": "#FFFFFF",
-		"borderStyle": "block",
 		"list": [{
 			"pagePath": "pages/index/index",
 			"text": "首页",

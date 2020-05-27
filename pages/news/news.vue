@@ -24,7 +24,7 @@
 			</swiper-item>
 			<!-- 话题 -->
 			<swiper-item>
-				<scroll-view scroll-y="true" :style="'height:' + scrollH + 'px'">
+				<scroll-view scroll-y="true" :show-scrollbar="false" :style="'height:' + scrollH + 'px'">
 					<!-- 热门分类 -->
 					<hot-cate :hotCate="hotCate"></hot-cate>
 					<!-- 搜索框 -->
@@ -103,7 +103,7 @@
 				}, {
 					name: "话题"
 				}],
-				tabIndex: 0,
+				tabIndex: 0, 
 				scrollH: 500,
 				// 关注数据
 				list: [],
@@ -170,7 +170,7 @@
 		onLoad() {
 			uni.getSystemInfo({
 				success: res => {
-					this.scrollH = res.windowHeight - res.statusBarHeight - 94;
+					this.scrollH = res.windowHeight - res.statusBarHeight - 50;
 				}
 			})
 			this.list = demo;
